@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="Books">
+    
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="book.js"></script>
+    <link rel="stylesheet" href="book.css">
+  </head>
+    
+  <body>
+      
+    <h2>Books</h2>
+    <div ng-controller="BooksController as books">
+
+      <ul class="unstyled">
+        <li ng-repeat="book in books.gallery">
+            <div ng-click="books.showDescription(book.id)" >{{book.name}}</div>
+            
+            
+        </li>
+      </ul>
+
+        <div>
+        
+        </div>
+        
+    </div>
+      
+  </body>
+    
+</html>
