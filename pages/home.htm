@@ -1,0 +1,63 @@
+<h1>Amazon 2016 bestsellers</h1>
+<hr>
+
+<!--
+    <div ng-controller='showDescription'> 
+	   <div ng-show="show">
+           Hi There
+        </div>
+        <button ng-click="onShow()">Click Me</button>        
+    </div> 
+      
+      
+      
+      <div ng-controller="showMouse">
+          <p ng-mouseover="hoverIn()">Here is 1</p>
+          <p class="pull-right" ng-mouseover="hoverIn()">Here is 2</p>
+
+            <p ng-show="hoverEdit" class="animate-show">    
+                   Wow it works
+            </p>
+
+
+      </div>-->
+      
+
+
+
+<div class="container">
+    
+        <!--  Products Container  -->
+    <div class="row">
+        
+      <!--  Product Container  -->
+      <div class="col-sm-4 store-books" ng-repeat="product in store.products">
+          
+        <!-- Image Gallery  -->
+      <product-gallery></product-gallery>
+
+
+      </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-sm-4 store-books" ng-repeat="product in store.products">
+            
+            <product-title class="panel-title"></product-title>
+
+
+            <product-panel class="panel-body"></product-panel>
+            
+        </div>
+            <div class="col-sm-4 store-books" ng-repeat="product in store.products">
+
+            <h2>{{product.price | currency}}</h2>
+
+            <button type="button" class="btn btn-outline-primary">Add to Cart</button>
+            
+        </div>
+        
+     </div>
+        
+<hr >

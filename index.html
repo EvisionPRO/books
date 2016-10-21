@@ -1,31 +1,61 @@
-<!doctype html>
-<html ng-app="Books">
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Amazon 2016 bestsellers</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link href="style.css" rel="stylesheet" />
+</head>
     
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="book.js"></script>
-    <link rel="stylesheet" href="book.css">
-  </head>
     
-  <body>
-      
-    <h2>Books</h2>
-    <div ng-controller="BooksController as books">
+<body ng-controller="StoreController as store">
 
-      <ul class="unstyled">
-        <li ng-repeat="book in books.gallery">
-            <div ng-click="books.showDescription(book.id)" >{{book.name}}</div>
-            
-            
-        </li>
-      </ul>
+<header>
 
-        <div>
-        
-        </div>
-        
+<nav class="navbar navbar-default">
+    <div class="container">
+          <a class="navbar-brand" href="#/">Home</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/myaccount"><i class="fa"></i> My Account</a></li>
+            <li><a href="#/login"><i class="fa"></i> Login</a></li>
+
+            <li><a href="#/register"><i class="fa"></i> Register</a></li>
+            <li><a href="#/cart"><i class="fa"></i> Cart</a></li>
+        </ul>
     </div>
-      
-  </body>
+</nav>
+
+</header>
     
+    <div class="container">
+    
+        <div ng-view></div>
+
+    
+    </div>
+
+    
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <script src="//code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.5.8/angular-cookies.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+    
+    
+    <script src="products.js"></script>
+
+</body>
 </html>
