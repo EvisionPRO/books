@@ -62,6 +62,25 @@
     
     app.controller('cartController', function() {
         
+    /*    
+        $scope.cartItems = [];
+        
+        $scope.addItem = function(newItem) {
+            
+            
+            newItem = angular.copy(newItem);
+            $scope.cartItems.push(newItem);
+            
+            console.log(" kjnsknak dna" + cartItems.lastIndexOf());
+        };
+        
+        $scope.removeItem = function(item) {
+            
+            
+        };
+        
+        */
+        
         
     });
     
@@ -76,9 +95,7 @@
     });
     
     
-    app.controller('StoreController', function(){
-    this.products = books;
-  });
+
 
     app.controller('TabController', function(){
     this.tab = 1;
@@ -100,9 +117,18 @@
     };
   });
 
- 
-
+    app.controller('StoreController', function($scope){
+        
     
+  
+
+      //  }
+        
+     // console.log('here is my id - ' + desc);  
+        
+//    $scope.myDesc = false;
+
+  //  $scope.chosenBook = [];
     
   var books = [{
       id: 0,
@@ -151,6 +177,7 @@
         createdOn: 1397490980837
       }]
     }, {
+      id: 2,
       name: 'The Whole30: The 30-Day Guide',
       description: "Millions of people visit Whole30.com every month and share their stories of weight loss and lifestyle makeovers. Hundreds of thousands of them have read It Starts With Food, which explains the science behind the program. At last, The Whole30 provides the step-by-step, recipe-by-recipe guidebook that will allow millions of people to experience the transformation of their entire life in just one month.",
       pages: 432,
@@ -180,7 +207,42 @@
       }]
     }];
     
+       
+    this.products = books;
     
+                    
+    $scope.showDesc = function(product) {
+        
+        $scope.chosenBook = [];
+
+        
+        product = angular.copy(product);
+        product.id = new Date().getUTCMilliseconds();
+        $scope.chosenBook.push(product);
+        
+    }; 
+        
+        
+        
+        $scope.cartItems = [];
+        
+        $scope.addItem = function(newItem) {
+            
+            
+            newItem = angular.copy(newItem);
+            $scope.cartItems.push(newItem);
+            
+            console.log(" kjnsknak dna" + $scope.cartItems.lastIndexOf());
+        };
+        
+        $scope.removeItem = function(item) {
+            
+            
+        };
+         
+    
+});
+  
     
 
 })();

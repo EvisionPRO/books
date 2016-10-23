@@ -1,7 +1,9 @@
 <h1>Amazon 2016 bestsellers</h1>
 <hr>
 
+
 <!--
+
     <div ng-controller='showDescription'> 
 	   <div ng-show="show">
            Hi There
@@ -31,33 +33,39 @@
     <div class="row">
         
       <!--  Product Container  -->
-      <div class="col-sm-4 store-books" ng-repeat="product in store.products">
-          
-        <!-- Image Gallery  -->
-      <product-gallery></product-gallery>
-
+      <div class="col-sm-4" ng-repeat="product in store.products">
+          <div ng-click="showDesc(product)">
+                <!-- Image Gallery  -->
+              <product-gallery></product-gallery>
+          </div>
 
       </div>
     </div>
     
+</div>
     
-    <div class="row">
-        <div class="col-sm-4 store-books" ng-repeat="product in store.products">
+  
+
+  <div class="list-group">
+        <li ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
+            {{$index}}
+                <product-title></product-title>
+
+                <product-panel></product-panel>
+
+                <h2>{{product.price | currency}}</h2>
+
+
+
+                <div>    
+                    <button type="button" class="btn btn-outline-primary" ng-click="addItem(product)">Add to Cart</button>
             
-            <product-title class="panel-title"></product-title>
+                </div>
 
-
-            <product-panel class="panel-body"></product-panel>
+        </li>
             
-        </div>
-            <div class="col-sm-4 store-books" ng-repeat="product in store.products">
 
-            <h2>{{product.price | currency}}</h2>
-
-            <button type="button" class="btn btn-outline-primary">Add to Cart</button>
-            
-        </div>
         
-     </div>
-        
-<hr >
+    </div>
+
+

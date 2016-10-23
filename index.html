@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Amazon 2016 bestsellers</title>
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/css/style.css" rel="stylesheet" />
 </head>
     
     
@@ -12,27 +12,79 @@
 
 <header>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-          <a class="navbar-brand" href="#/">Home</a>
-        <ul class="nav navbar-nav navbar-right">
+          <a class="navbar-brand" href="#/">Amazon 2016 bestsellers</a>
+            <ul class="nav navbar-nav navbar-right">
             <li><a href="#/myaccount"><i class="fa"></i> My Account</a></li>
             <li><a href="#/login"><i class="fa"></i> Login</a></li>
 
             <li><a href="#/register"><i class="fa"></i> Register</a></li>
-            <li><a href="#/cart"><i class="fa"></i> Cart</a></li>
+            <li>
+                
+               <a href="/index.html#/cart"> <button href="#/cart.htm" class="btn btn-default" type="button" style="margin-top: -5px;"> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">  </span> My Cart <span class="badge">4</span>
+                   </button></a>
+                
+            </li>
         </ul>
     </div>
-</nav>
+</nav> 
+   <!--
+<div class="container navbar-fixed-top" id="nav">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="#/">Home</a>
+        </div>
+        <div class="col-sm-6">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/myaccount"><i class="fa"></i> My Account</a></li>
+            <li><a href="#/login"><i class="fa"></i> Login</a></li>
+
+            <li><a href="#/register"><i class="fa"></i> Register</a></li>
+            <li>
+                
+               <a href="/index.html#/cart"> <button href="#/cart.htm" class="btn btn-default" type="button" style="margin-top: -5px;"> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">  </span> My Cart <span class="badge">4</span>
+                   </button></a>
+        </div>
+    
+    </div>
+    
+</div> -->
+            
+    
 
 </header>
     
     <div class="container">
     
         <div ng-view></div>
-
     
     </div>
+    
+    
+      <div class="list-group">
+        <li ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
+            {{$index}}
+                <product-title></product-title>
+
+                <product-panel></product-panel>
+
+                <h2>{{product.price | currency}}</h2>
+
+
+
+                <div>    
+                    <button type="button" class="btn btn-outline-primary" ng-click="addItem(product)">Add to Cart</button>
+            
+                </div>
+
+        </li>
+            
+
+        
+    </div>
+    
+    
 
     
 
