@@ -2,38 +2,14 @@
 <hr>
 
 
-<!--
-
-    <div ng-controller='showDescription'> 
-	   <div ng-show="show">
-           Hi There
-        </div>
-        <button ng-click="onShow()">Click Me</button>        
-    </div> 
-      
-      
-      
-      <div ng-controller="showMouse">
-          <p ng-mouseover="hoverIn()">Here is 1</p>
-          <p class="pull-right" ng-mouseover="hoverIn()">Here is 2</p>
-
-            <p ng-show="hoverEdit" class="animate-show">    
-                   Wow it works
-            </p>
-
-
-      </div>-->
-      
-
 
 
 <div class="container">
     
-        <!--  Products Container  -->
     <div class="row">
         
       <!--  Product Container  -->
-      <div class="col-sm-4" ng-repeat="product in store.products">
+      <div class="col-sm-4" ng-repeat="product in products">
           <div ng-click="showDesc(product)">
                 <!-- Image Gallery  -->
               <product-gallery></product-gallery>
@@ -46,9 +22,8 @@
     
   
 
-  <div class="list-group">
-        <li ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
-            {{$index}}
+  <div class="row">
+        <div ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
                 <product-title></product-title>
 
                 <product-panel></product-panel>
@@ -62,7 +37,7 @@
             
                 </div>
 
-        </li>
+        </div>
             
 
         

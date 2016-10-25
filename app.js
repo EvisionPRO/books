@@ -1,46 +1,7 @@
 (function () {
 
-    var app = angular.module('app', ['ngRoute', 'ngCookies',  'HomeCtrl', 'LoginCtrl', 'RegisterCtrl', 'store-products']);
+    var app = angular.module('app', ['ngRoute', 'myRoutes', 'ngCookies',  'HomeCtrl', 'LoginCtrl', 'RegisterCtrl', 'store-products']);
 
-    app.config(function($routeProvider, $locationProvider) {
-        $routeProvider
-            
-            .when('/', {
-                templateUrl: '/pages/home.htm',
-                controller: 'StoreController'
-            })
-
-            .when('/cart', {
-                templateUrl: '/pages/cart.htm',
-                controller: 'cartController'
-            })
-
-            .when('/checkout', {
-                templateUrl: '/pages/checkout.htm',
-                controller: 'checkoutController'
-            })
-            
-            
-            .when('/myaccount', {
-                controller: 'HomeController',
-                templateUrl: 'home/home.view.html',
-                controllerAs: 'vm'
-            })
-
-            .when('/login', {
-                controller: 'LoginController',
-                templateUrl: 'login/login.view.html',
-                controllerAs: 'vm'
-            })
-
-            .when('/register', {
-                controller: 'RegisterController',
-                templateUrl: 'register/register.view.html',
-                controllerAs: 'vm'
-            })
-
-            .otherwise({ redirectTo: '/' });
-    });
 
     app.run(function($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
@@ -61,26 +22,7 @@
     
     
     app.controller('cartController', function() {
-        
-    /*    
-        $scope.cartItems = [];
-        
-        $scope.addItem = function(newItem) {
-            
-            
-            newItem = angular.copy(newItem);
-            $scope.cartItems.push(newItem);
-            
-            console.log(" kjnsknak dna" + cartItems.lastIndexOf());
-        };
-        
-        $scope.removeItem = function(item) {
-            
-            
-        };
-        
-        */
-        
+          
         
     });
     
@@ -118,20 +60,50 @@
   });
 
     app.controller('StoreController', function($scope){
-        
+       
+    $scope.products = books;
     
+                    
+    $scope.showDesc = function(product) {
+        
+        $scope.chosenBook = [];
+        $scope.cartItems = [];
+        $scope.quantity = [];
+
+        
+        product = angular.copy(product);
+        product.id = new Date().getUTCMilliseconds();
+        $scope.chosenBook.push(product);
+                
+    }; 
+        
+        
+        $scope.addItem = function(newItem) {
+            
+         //  newItem = angular.copy(newItem);
+            
+            $scope.cartItems.push(newItem);
+            
+            console.log(" My results " + $scope.cartItems.length);
+            console.log($scope.cartItems[0]);                console.log($scope.cartItems[1]);
+            console.log($scope.cartItems[2]);
+
+
+            
+            $scope.quantity++;
+              
+            
+        console.log($scope.quantity);
+
+        };
+         
+         
+    }); 
+
   
-
-      //  }
-        
-     // console.log('here is my id - ' + desc);  
-        
-//    $scope.myDesc = false;
-
-  //  $scope.chosenBook = [];
     
   var books = [{
-      id: 0,
+      book: 0,
       name: '7 Habits of Highly Effective People',
       description: "One of the most inspiring and impactful books ever written, The 7 Habits of Highly Effective People has captivated readers for 25 years. It has transformed the lives of Presidents and CEOs, educators and parents— in short, millions of people of all ages and occupations.",
       pages: 432,
@@ -154,7 +126,7 @@
         createdOn: 1397490980837
       }]
     }, {
-      id: 1,
+      book: 1,
       name: 'First 100 Words and pictures - board book',
       description: "Your little one will soon learn some essential first words and pictures with this bright board book. There are 100 color photographs to look at and talk about, and 100 simple first words to read and learn, too. The pages are made from tough board for hours of fun reading, and the cover is softly padded for little hands to hold.",
       pages: 26,
@@ -177,7 +149,7 @@
         createdOn: 1397490980837
       }]
     }, {
-      id: 2,
+      book: 2,
       name: 'The Whole30: The 30-Day Guide',
       description: "Millions of people visit Whole30.com every month and share their stories of weight loss and lifestyle makeovers. Hundreds of thousands of them have read It Starts With Food, which explains the science behind the program. At last, The Whole30 provides the step-by-step, recipe-by-recipe guidebook that will allow millions of people to experience the transformation of their entire life in just one month.",
       pages: 432,
@@ -207,42 +179,6 @@
       }]
     }];
     
-       
-    this.products = books;
-    
-                    
-    $scope.showDesc = function(product) {
-        
-        $scope.chosenBook = [];
-
-        
-        product = angular.copy(product);
-        product.id = new Date().getUTCMilliseconds();
-        $scope.chosenBook.push(product);
-        
-    }; 
-        
-        
-        
-        $scope.cartItems = [];
-        
-        $scope.addItem = function(newItem) {
-            
-            
-            newItem = angular.copy(newItem);
-            $scope.cartItems.push(newItem);
-            
-            console.log(" kjnsknak dna" + $scope.cartItems.lastIndexOf());
-        };
-        
-        $scope.removeItem = function(item) {
-            
-            
-        };
-         
-    
-});
-  
-    
+ 
 
 })();
