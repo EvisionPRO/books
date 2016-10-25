@@ -8,7 +8,7 @@
 </head>
     
     
-<body ng-controller="StoreController as store">
+<body>
 
 <header>
 
@@ -16,13 +16,13 @@
     <div class="container">
           <a class="navbar-brand" href="#/">Amazon 2016 bestsellers</a>
             <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/myaccount"><i class="fa"></i> My Account</a></li>
+            <li><a href="#/myaccount"><i class="fa"></i> Hi, {{$user.firstName}}</a></li>
             <li><a href="#/login"><i class="fa"></i> Login</a></li>
 
             <li><a href="#/register"><i class="fa"></i> Register</a></li>
             <li>
                 
-               <a href="/index.html#/cart"> <button href="#/cart.htm" class="btn btn-default" type="button" style="margin-top: -5px;"> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">  </span> My Cart <span class="badge">4</span>
+               <a href="/index.html#/cart"> <button href="#/cart.htm" class="btn btn-default" type="button" style="margin-top: -5px;"> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">  </span> My Cart <span class="badge" ng-controller="StoreController">{{quantity}} items</span>
                    </button></a>
                 
             </li>
@@ -61,8 +61,8 @@
     
     </div>
     
-    
-      <div class="list-group">
+    Here is the text :)
+      <div class="list-group" ng-controller="StoreController">
         <li ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
             {{$index}}
                 <product-title></product-title>
@@ -108,6 +108,8 @@
     
     
     <script src="products.js"></script>
+    <script src="routes.js"></script>
+
 
 </body>
 </html>
