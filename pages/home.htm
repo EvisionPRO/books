@@ -3,7 +3,6 @@
 
 
 
-
 <div class="container">
     
     <div class="row">
@@ -14,33 +13,41 @@
                 <!-- Image Gallery  -->
               <product-gallery></product-gallery>
           </div>
+            <button type="button" class="btn btn-secondary more-details" ng-click="showDesc(product)">Check Details</button>
+        </div>
 
       </div>
-    </div>
     
-</div>
     
-  
-
-  <div class="row">
-        <div ng-repeat="product in chosenBook track by product.id" ng-animate="'animate'">
-                <product-title></product-title>
-
-                <product-panel></product-panel>
-
-                <h2>{{product.price | currency}}</h2>
-
-
-
-                <div>    
-                    <button type="button" class="btn btn-outline-primary" ng-click="addItem(product)">Add to Cart</button>
-            
-                </div>
-
-        </div>
-            
 
         
-    </div>
+      <div class="container myTable">
+      
+          <div ng-repeat="item in myBook" ng-animate="'animate'">
+                    <product-title></product-title>
+
+                    <product-panel></product-panel>
+
+                    <h2 class="my-price">{{item.price | currency}}</h2>
+
+
+
+                    <div class="pull-right">   
+                        
+                        <books-addtocart id="{{ item.id }}"
+                                   name="{{ item.name }}"
+                                   price="{{ item.price  }}"
+                                   data="item"
+                                   quantity="1">
+                            Add To Cart
+                        </books-addtocart>
+
+                    </div>
+
+            </div>
+      </div>  
+</div>
+
+        
 
 

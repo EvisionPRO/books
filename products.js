@@ -3,14 +3,14 @@
 
   productApp.directive('productTitle', function(){
     return {
-      restrict: 'E',
+      restrict: 'AE',
       templateUrl: 'product/title.htm'
     };
   });
 
   productApp.directive('productDesc', function() {
     return {
-      restrict: 'E',
+      restrict: 'AE',
       templateUrl: 'product/description.htm'
     };
   });

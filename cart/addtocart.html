@@ -1,0 +1,18 @@
+
+<div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+
+</div>
+<div ng-show="attrs.id">
+    <div>
+
+        <a class="btn btn-lg btn-primary alert-button"
+           ng-click="books.addItem(id, name, price, q, data)"
+           ng-transclude></a>
+    </div>    
+    <div class="alert alert-success alert-cart" ng-show="inCart()">
+        This item is in your cart. <a ng-click="books.removeItemById(id)" style="cursor: pointer;">Remove</a>
+    </div>
+
+</div>
+

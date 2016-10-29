@@ -1,0 +1,6 @@
+<div class="row">   
+    <button href="#/cart.htm" class="btn btn-default" type="button" style="margin-top: -5px;"> 
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart <span class="badge">{{ books.getTotalItems() }} items</span>
+        <span><b> {{ books.totalCost() | currency }} </b></span>
+     </button>
+</div>

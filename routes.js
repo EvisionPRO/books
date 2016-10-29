@@ -15,30 +15,31 @@ app.config(function($routeProvider, $locationProvider) {
 
         .when('/cart', {
             templateUrl: '/pages/cart.htm',
-            controller: 'cartController'
+            controller: 'StoreController',
+
         })
 
         .when('/checkout', {
             templateUrl: '/pages/checkout.htm',
-            controller: 'checkoutController'
+            controller: 'StoreController'
         })
 
 
         .when('/myaccount', {
             controller: 'HomeController',
-            templateUrl: 'home/home.view.html',
+            templateUrl: '/pages/myaccount.htm',
             controllerAs: 'vm'
         })
 
         .when('/login', {
             controller: 'LoginController',
-            templateUrl: 'login/login.view.html',
+            templateUrl: '/pages/login.htm',
             controllerAs: 'vm'
         })
 
         .when('/register', {
             controller: 'RegisterController',
-            templateUrl: 'register/register.view.html',
+            templateUrl: '/pages/register.htm',
             controllerAs: 'vm'
         })
 
