@@ -1,43 +1,45 @@
-/*
-body { 
-  background: url(/images/bg_home.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-*/
 body {
     
+    margin: 0 auto;
+    padding: 0 auto;
     padding-top: 70px;
-    
+    background-color: #f0f0f0;
+}
 
-/*
-  background-color: #768489;
-  
+blockquote {
+    border-left: 5px solid #8d8d8d ;
+}
 
-  background-position: center center;
-  
-  background-repeat: no-repeat;
-  
-  background-attachment: fixed;
-  
-  background-size: cover;
-  
-  background-color:#464646;
-  
-   SHORTHAND CSS NOTATION
-   * background: url(background-photo.jpg) center center cover no-repeat fixed; */
+span[ng-click] {
+  cursor: pointer;
+}
 
+div[ng-click] {
+  cursor: pointer;
 }
 
 h1 {
     
 font-family: 'Oswald', sans-serif;
 text-align: center;    
+font-weight: 700;
+}
 
 
+.line {
+    text-align: left;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #585858;
+}
+
+.more-details {
+    background-color: #f0f0f0;
+    border: 1px solid #272727;
+    margin-top: 10px;
+    width: 98%;
+    height: 40px;
 }
 
 
@@ -62,13 +64,16 @@ text-align: center;
 }
 
 
-.description {
-    width: 80%;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 35px 45px 20px 15px;
-    padding: 30px;
-    overflow: hidden;
-    color: #000000;
+
+.myTable {
+    display: table;
+    margin: 0 auto; 
+    width: 85%;
+    margin-top: 25px;
+    margin-bottom: 65px;
+    padding: 10px 40px 20px 40px;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 
@@ -121,4 +126,92 @@ text-align: center;
 .animate-enter {
     opacity: 0;
     left: -50px;
+}
+
+
+.navbar {
+   background-color: #000000;
+   background: rgba(0, 0, 0, 0.74);
+   border-color: transparent;
+}
+
+.navbar li { color: #000 } 
+
+
+pre {
+    padding: 25px;
+}
+table td{
+    font-size: 14px;
+}
+table tfoot td{
+    font-weight: bold;
+}
+.navbar-fixed-top ul.navbar-nav li a {
+    padding-bottom: 14px;
+}
+
+.main {
+    padding: 40px 15px;
+}
+
+.thumbnail{
+    height: 510px;
+}
+.thumbnail img{
+     width: 60%;
+}.thumbnail p{
+     height:63px;
+    overflow: hidden;
+    font-size: 12px;
+
+}
+.thumbnail .price{
+    color:#3a1
+}
+.thumbnail h3 {
+    height: 50px;
+}
+.nav path {
+    fill:#fff
+}
+
+code.block {
+    padding: 20px;
+    display: block;
+}
+
+.alert-cart {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.alert-button{
+    width: 250px;
+}
+
+#footer {
+    height: 70px;
+    margin-top: 35px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #ddd;
+    background-color: #000000;
+    background: rgba(0, 0, 0, 0.74);
+    border-color: transparent;
+    
+}
+
+.my-price {
+    text-align: right;
+    padding-right: 80px;
+    margin-top: 40px;
+
+}
+
+.review-box {
+    padding: 35px;
+    border: 2px dashed #8d8d8d;
+    border-radius: 5px;
 }
