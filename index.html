@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html ng-app="app">
-<head>
-    <meta charset="utf-8" />
-    <title>Amazon 2016 bestsellers</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="/css/style.css" rel="stylesheet" />
-</head>
-    
-    
-<body>
+    <head>
 
-<header>
+    <!--
+    --      LaunchCode Mentorship Program
+    --      
+    --      Title: Front - End Web Development Project
+    --
+    --      Description: A front end web project should demonstrate all of the great skills that I’ve learned to date, along with a few new ones that I’ll learn along the way. 
+    --
+    --
+    --     Core Objectives Checklist:
+    --      -Web page(s) in HTML and CSS
+    --      -Required: HTML and CSS
+    --      -A great user interface (UI) with responsive design
+    --      -Required: CSS
+    --      -Optional: Bootstrap
+    --      -Added functionality (3-5 features) with Javascript
+    --      -Required: JavaScript
+    --      -Optional: JQuery and/or AJAX)
+    --      -User Experience (UX) enhancement a front-end framework
+    --      -Required: React.js, Ember.js, or Angular.js
+    --
+    --     Project Examples:
+    --
+    --      -Ecommerce site: display products and enable purchase
+    --      -Feature 1: user management (registration, login, etc.)
+    --      -Feature 2: gallery of items (view and select items)
+    --      -Feature 3: shopping cart (save items for later)
+    --      -Feature 4: checkout (purchase saved items)
+    --      -Feature 5: payment API
+    --
+    --
+    --      Author: Jaroslaw Sliz
+    --      Date: October 2016
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-          <a class="navbar-brand" href="#/">Amazon 2016 bestsellers</a>
-            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/myaccount"><i class="fa"></i> Hi, {{$user.firstName}}</a></li>
-            <li><a href="#/login"><i class="fa"></i> Login</a></li>
+    -->
 
-            <li><a href="#/register"><i class="fa"></i> Register</a></li>
-            <li>
-                
-                <a href="#/cart">
-                        <books-summary></books-summary>
-                    </a>
-                
-            </li>
-        </ul>
+
+        <meta charset="utf-8" />
+        <title>Amazon 2016 bestsellers</title>
+
+        <meta charset="utf-8">
+        <meta name="title" content="">
+        <meta name="description" content="Really simple shopping cart for AngularJS directive module">
+        <meta name="keywords" content="Really simple shopping cart for AngularJS directive module">
+        <meta name="author" content="Jaroslaw Sliz - @jareksliz">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="/css/style.css" rel="stylesheet" />
+
+    </head>
+
+
+    <body>
+
+        <header>
+            
+            <!-- Bootstrap header  -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#/">Home</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/myaccount"ng-click="login()" ng-show="userAccount">My account</a></li>
+                        <li><a href="#/login" ng-click="login()" ng-hide="userLogin">Login/Register</a></li>
+                        <li>    
+                        <a href="#/cart"><books-summary></books-summary></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>      
+
+        </header>
+ 
+
+            <!-- Route service with all products in BookStore -->
+            <div class="container" ng-controller="StoreController">
+
+                <div ng-view></div>
+
+            </div>
         
-    </div>
-</nav>      
-    
-</header>
+        <!-- Resorces -->
+        <script src="app-services/jquery-3.1.1.min.js"></script>
+        <script src="app-services/bootstrap.min.js"></script>
 
-    
-<div class="container">
+        <script src="//code.angularjs.org/1.5.8/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
+        <script src="//code.angularjs.org/1.5.8/angular-cookies.min.js"></script>
 
-    <div ng-view></div>
+        <script src="js/app.js"></script>
+        <script src="app-services/authentication.service.js"></script>
+        <script src="app-services/flash.service.js"></script>
 
-</div>
-    
-    
+        <!-- User service for demo that uses local storage -->
+        <script src="app-services/user.service.local-storage.js"></script>
 
-    <script src="jquery-3.1.1.min.js"></script>
-    <script src="bootstrap.min.js"></script>
+        <!-- Login and Register services -->
+        <script src="user-services/home.controller.js"></script>
+        <script src="user-services/login.controller.js"></script>
+        <script src="user-services/register.controller.js"></script>
 
-    <script src="//code.angularjs.org/1.5.8/angular.min.js"></script>
-    <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
-    <script src="//code.angularjs.org/1.5.8/angular-cookies.min.js"></script>
-
-    <script src="app.js"></script>
-    <script src="app-services/authentication.service.js"></script>
-    <script src="app-services/flash.service.js"></script>
-
-    <!-- Fake user service for demo that uses local storage -->
-    <script src="app-services/user.service.local-storage.js"></script>
-
-    <script src="user-services/home.controller.js"></script>
-    <script src="user-services/login.controller.js"></script>
-    <script src="user-services/register.controller.js"></script>
-    
-    
-    <script src="products.js"></script>
-    <script src="routes.js"></script>
-    <script src="cart/cart-service.js"></script>
-    <script src="cart/books.directives.js"></script>
+        <!-- Scripts -->
+        <script src="js/products.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/cart-service.js"></script>
+        <script src="js/books.directives.js"></script>
+        <script src="js/checkout.js"></script>
 
 
-</body>
+    </body>
 </html>

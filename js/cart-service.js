@@ -1,7 +1,6 @@
 (function() {
 
-
-var app = angular.module('Books', ['books.directives'])
+var app = angular.module('books', ['books.directives'])
 
     app.config(function () {
 
@@ -28,7 +27,8 @@ var app = angular.module('Books', ['books.directives'])
     });
 
     app.service('books', function ($rootScope, $window, booksItem, store) {
-
+        
+        
         this.init = function(){
             this.$cart = {
                 shipping : null,

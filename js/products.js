@@ -18,7 +18,9 @@
   productApp.directive('productReviews', function(){
     return {
       restrict: "AE",
-      templateUrl: 'product/reviews.htm'
+      templateUrl: 'product/reviews.htm',
+        controller: 'ReviewController',
+
     };
   });
 
@@ -55,5 +57,14 @@
       controllerAs: 'tab'
     };
   });
+    
+    productApp.directive('userLogin', function(){
+    return {
+        restrict: 'E',
+        templateUrl: 'product/login-header.htm',
+        controller: 'HomeController',
+    };
+  });
+    
 
 })();
