@@ -1,12 +1,12 @@
 (function() {
 
-var app = angular.module('books.directives', [])
+var app = angular.module('books.directives', ['myBooksCheckout'])
 
-    app.controller('CartController',['$scope', 'books', function($scope, books) {
+    app.controller('CartController', function($scope, books) {
         $scope.books = books;
-    }])
+    });
 
-    app.directive('booksAddtocart', ['books', function(books){
+    app.directive('booksAddtocart', function(books){
         return {
             restrict : 'E',
             controller : 'CartController',
@@ -21,7 +21,7 @@ var app = angular.module('books.directives', [])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'cart/addtocart.html';
+                    return 'product/addtocart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -41,16 +41,16 @@ var app = angular.module('books.directives', [])
             }
 
         };
-    }])
+    });
 
-    app.directive('booksCart', [function(){
+    app.directive('booksCart', function(){
         return {
             restrict : 'E',
             controller : 'CartController',
             scope: {},
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'cart/cart.html';
+                    return 'product/cart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -59,22 +59,54 @@ var app = angular.module('books.directives', [])
 
             }
         };
-    }])
+    });
 
-    app.directive('booksSummary', [function(){
-        return {
+    app.directive('booksSummary', function() {
+        return { 
             restrict : 'E',
             controller : 'CartController',
             scope: {},
             transclude: true,
+            templateUrl: 'product/summary.html'
+        };
+    });
+    
+    
+    app.directive('booksCheckout', function(){
+        return {
+            restrict : 'E',
+            controller : ('CartController', function($rootScope, $scope, books, fulfilmentProvider) {
+                $scope.books = books;
+
+                $scope.checkout = function () {
+                    fulfilmentProvider.setService($scope.service);
+                    fulfilmentProvider.setSettings($scope.settings);
+                    fulfilmentProvider.checkout()
+                        .success(function (data, status, headers, config) {
+                            $rootScope.$broadcast('books:checkout_succeeded', data);
+                        })
+                        .error(function (data, status, headers, config) {
+                            $rootScope.$broadcast('books:checkout_failed', {
+                                statusCode: status,
+                                error: data
+                            });
+                        });
+                }
+            }),
+            scope: {
+                service:'@',
+                settings:'='
+            },
+            transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'cart/summary.html';
+                    return 'product/checkout.html';
                 } else {
                     return attrs.templateUrl;
                 }
             }
         };
-    }])
+    });
+
 
 })();

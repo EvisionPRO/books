@@ -8,7 +8,7 @@ app.config(function($routeProvider, $locationProvider) {
 
         .when('/', {
             templateUrl: '/pages/home.htm',
-            controller: 'StoreController',
+            //controller: 'StoreController',
             //controllerAs: 'store'
 
         })

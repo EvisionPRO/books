@@ -2,7 +2,7 @@
     
     var loginApp = angular.module('LoginCtrl', []);
 
-    loginApp.controller('LoginController', function($location, AuthenticationService, FlashService) {
+    loginApp.controller('LoginController', function($location, AuthenticationService, FlashService, $rootScope) {
         var vm = this;
 
         vm.login = login;
@@ -18,6 +18,9 @@
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/myaccount');
+                    $rootScope.userLogin = true;
+                    $rootScope.userAccount = true;
+
                 } else {
                     FlashService.Error(response.message);
                     vm.dataLoading = false;

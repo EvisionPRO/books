@@ -1,1 +1,14 @@
-Checkout
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="line">Cart With My Books<span></h1>
+        <books-cart></books-cart>
+    </div>
+</div>
+
+
+<div>
+    <books-checkout service="paypal" settings="payPalSettings" ng-disabled="books.getTotalItems() === 0"></books-checkout>
+</div>
+
+
+    

@@ -23,23 +23,34 @@ h1 {
 font-family: 'Oswald', sans-serif;
 text-align: center;    
 font-weight: 700;
+text-shadow: 0 0 1px #c4d1e8; 
+
 }
 
 
 .line {
     text-align: left;
-    margin-top: 70px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 35px;
     padding-bottom: 10px;
     border-bottom: 1px solid #585858;
 }
 
 .more-details {
-    background-color: #f0f0f0;
-    border: 1px solid #272727;
-    margin-top: 10px;
-    width: 98%;
+    display: block;
+    margin: 0 auto;
+    background-color: #f4bf75;
+    font-family: 'Oswald', sans-serif !important;
+    border: 1px solid #d08317;
+    margin-top: 15px;
+    width: 60%;
     height: 40px;
+    font-weight: 700;
+}
+
+.images-style {
+    
+    margin-bottom: 15px !important;
 }
 
 
@@ -74,6 +85,10 @@ font-weight: 700;
     padding: 10px 40px 20px 40px;
     border-radius: 8px;
     background-color: #fff;
+}
+
+.no-myTable {
+    
 }
 
 
