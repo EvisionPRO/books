@@ -21,39 +21,39 @@ var app = angular.module('myRoutes', []);
         $routeProvider
 
             .when('/', {
-                templateUrl: 'books/pages/home.htm',
+                templateUrl: 'pages/home.htm',
                 //controller: 'StoreController',
                 //controllerAs: 'store'
 
             })
 
             .when('/cart', {
-                templateUrl: 'books/pages/cart.htm',
+                templateUrl: 'pages/cart.htm',
                 controller: 'StoreController',
 
             })
 
             .when('/checkout', {
-                templateUrl: 'books/pages/checkout.htm',
+                templateUrl: 'pages/checkout.htm',
                 controller: 'StoreController'
             })
 
 
             .when('/myaccount', {
                 controller: 'HomeController',
-                templateUrl: 'books/pages/myaccount.htm',
+                templateUrl: 'pages/myaccount.htm',
                 controllerAs: 'vm'
             })
 
             .when('/login', {
                 controller: 'LoginController',
-                templateUrl: 'books/pages/login.htm',
+                templateUrl: 'pages/login.htm',
                 controllerAs: 'vm'
             })
 
             .when('/register', {
                 controller: 'RegisterController',
-                templateUrl: 'books/pages/register.htm',
+                templateUrl: 'pages/register.htm',
                 controllerAs: 'vm'
             })
 
