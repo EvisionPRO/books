@@ -1,7 +1,22 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      Resources and credits: Tutorial Points, Stackoverflow.com, Angularjs.org
+**      File name: home.controller.js
+
+**      Desription: this file defines a controller used on the page after user login into the system
+
+*************************************************************/
+
 (function(){
+  
+// Create main app for the module
+var homeApp = angular.module('HomeCtrl', []);
     
-    var homeApp = angular.module('HomeCtrl', []);
-    
+    // Create controller with all functions
     homeApp.controller('HomeController', function(UserService, $rootScope) {
         var vm = this;
 
@@ -36,9 +51,6 @@
                 loadAllUsers();
             });
         };
-        
-  
-        
         
     });
     

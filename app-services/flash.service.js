@@ -1,3 +1,16 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      Resources and credits: Tutorial Points, Stackoverflow.com, Angularjs.org
+**      File name: flash.service.js
+
+**      Desription: this file defines services used for login authorization process.
+
+*************************************************************/
+
 (function () {
     'use strict';
 
