@@ -47,7 +47,7 @@ var app = angular.module('myRoutes', []);
 
             .when('/login', {
                 controller: 'LoginController',
-                templateUrl: '/pages/login.htm',
+                templateUrl: 'books/pages/login.htm',
                 controllerAs: 'vm'
             })
 
