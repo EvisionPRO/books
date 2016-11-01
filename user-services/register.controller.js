@@ -1,3 +1,16 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      Resources and credits: Tutorial Points, Stackoverflow.com, Angularjs.org
+**      File name: register.controller.js
+
+**      Desription: this file defines regitration controller
+
+*************************************************************/
+
 (function () {
     
     var registerApp = angular.module('RegisterCtrl', []);

@@ -1,16 +1,28 @@
+<!--
+--      LaunchCode Mentorship Program
+--      
+--      Title: Front - End Web Development Project
+--
+--      File: panel.html
+--      Description: this file contains all html information about panel diretive and we are using this file as template.
+--
+--      Author: Jaroslaw Sliz
+--      Date: October 2016
+
+-->
 
 <section>
-  </section><ul class="nav nav-pills">
-    <li ng-class="{ active:tab.isSet(1) }">
-      <a href="" ng-click="tab.setTab(1)">Description</a>
-    </li>
-    <li ng-class="{ active:tab.isSet(2) }">
-      <a href="" ng-click="tab.setTab(2)">Specs</a>
-    </li>
-    <li ng-class="{ active:tab.isSet(3) }">
-      <a href="" ng-click="tab.setTab(3)">Reviews</a>
-    </li>
-  </ul>
+    <ul class="nav nav-pills">
+        <li ng-class="{ active:tab.isSet(1) }">
+          <a href="" ng-click="tab.setTab(1)">Description</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(2) }">
+          <a href="" ng-click="tab.setTab(2)">Specs</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(3) }">
+          <a href="" ng-click="tab.setTab(3)">Reviews</a>
+        </li>
+    </ul>
 
   <!--  Description Tab's Content  -->
   <product-desc ng-show="tab.isSet(1)"></product-desc>

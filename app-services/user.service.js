@@ -1,3 +1,16 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      Resources and credits: Tutorial Points, Stackoverflow.com, Angularjs.org
+**      File name: user.service.js
+
+**      Desription: this file defines services used for login authorization process.
+
+*************************************************************/
+
 (function () {
     'use strict';
 
@@ -41,8 +54,6 @@
         function Delete(id) {
             return $http.delete('/api/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
-
-        // private functions
 
         function handleSuccess(res) {
             return res.data;

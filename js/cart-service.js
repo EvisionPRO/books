@@ -1,16 +1,31 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      File name: cart-service.js
+**      Resources and credits: Stackoverflow.com, www.airpair.com, Github.com/snapjay/ngcart, Angularjs.org
+
+**      Desription: this file contains all functions and services for the cart.
+
+*************************************************************/
 (function() {
 
+// Create main app for cart services
 var app = angular.module('books', ['books.directives'])
 
+    // Initiate config function
     app.config(function () {
-
     });
 
+    // Initiate provider service
     app.provider('$books', function () {
         this.$get = function () {
         };
     });
 
+    // Initiate our services in store
     app.run(function ($rootScope, books, booksItem, store) {
 
         $rootScope.$on('books:change', function(){
@@ -26,6 +41,7 @@ var app = angular.module('books', ['books.directives'])
 
     });
 
+    // Define all functions in bookstore
     app.service('books', function ($rootScope, $window, booksItem, store) {
         
         
@@ -182,6 +198,7 @@ var app = angular.module('books', ['books.directives'])
 
     });
 
+    // Define factory service for bookstore
     app.factory('booksItem', function ($rootScope, $log) {
 
         var item = function (id, name, price, quantity, data) {
@@ -242,7 +259,6 @@ var app = angular.module('books', ['books.directives'])
                 $log.info('Quantity must be an integer and was defaulted to 1');
             }
 
-
         };
 
         item.prototype.getQuantity = function(){
@@ -278,6 +294,7 @@ var app = angular.module('books', ['books.directives'])
 
     });
 
+    // Create service for local storage
     app.service('store', function ($window) {
 
         return {
@@ -303,6 +320,5 @@ var app = angular.module('books', ['books.directives'])
             }
         }
     });
-    
     
 })();

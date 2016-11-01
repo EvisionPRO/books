@@ -1,3 +1,16 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      Resources and credits: Tutorial Points, Stackoverflow.com, Angularjs.org
+**      File name: login.controller.js
+
+**      Desription: this file defines login controller 
+
+*************************************************************/
+
 (function () {
     
     var loginApp = angular.module('LoginCtrl', []);

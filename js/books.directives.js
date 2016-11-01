@@ -1,11 +1,29 @@
+/*************************************************************
+
+**      LaunchCode Mentorship Program
+
+**      Date: October 2016
+**      Author: Jaroslaw Sliz
+**      File name: books.directives.js
+**      Resources and credits: Codeschool.com, Stackoverflow.com, Angularjs.org
+
+
+**      Desription: this file contains functions, controllers and directives related to the cart. 
+
+*************************************************************/
+
 (function() {
 
-var app = angular.module('books.directives', ['myBooksCheckout'])
+    
+// Create main app for directives
+var app = angular.module('books.directives', ['myBooksCheckout']);
 
+    // Create CartCotroller
     app.controller('CartController', function($scope, books) {
         $scope.books = books;
     });
 
+    // Create add to cart button directive
     app.directive('booksAddtocart', function(books){
         return {
             restrict : 'E',
@@ -14,7 +32,6 @@ var app = angular.module('books.directives', ['myBooksCheckout'])
                 id:'@',
                 name:'@',
                 quantity:'@',
-                quantityMax:'@',
                 price:'@',
                 data:'='
             },
@@ -22,7 +39,7 @@ var app = angular.module('books.directives', ['myBooksCheckout'])
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
                     return 'product/addtocart.html';
-                } else {
+                 } else {
                     return attrs.templateUrl;
                 }
             },
@@ -37,12 +54,11 @@ var app = angular.module('books.directives', ['myBooksCheckout'])
                 } else {
                     scope.q = parseInt(scope.quantity);
                 }
-
             }
-
         };
     });
 
+    // Create book cart directive 
     app.directive('booksCart', function(){
         return {
             restrict : 'E',
@@ -56,11 +72,11 @@ var app = angular.module('books.directives', ['myBooksCheckout'])
                 }
             },
             link:function(scope, element, attrs){
-
             }
         };
     });
 
+    // Create cart summary directive - right corner on the top
     app.directive('booksSummary', function() {
         return { 
             restrict : 'E',
@@ -71,7 +87,7 @@ var app = angular.module('books.directives', ['myBooksCheckout'])
         };
     });
     
-    
+    // Create checkout paypal directive
     app.directive('booksCheckout', function(){
         return {
             restrict : 'E',
